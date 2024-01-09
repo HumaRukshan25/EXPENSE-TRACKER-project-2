@@ -1,0 +1,42 @@
+/* RegistrationForm.css */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.738);
+    max-width: 300px;
+  }
+  
+  .form-body {
+    margin-bottom: 20px;
+  }
+  
+  .form__label {
+    margin-bottom: 5px;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Add any other styles as needed */
+  

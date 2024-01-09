@@ -1,0 +1,30 @@
+.head {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .expense {
+    margin-bottom: 10px;
+  }
+  
+  .profile {
+    margin-bottom: 20px;
+  }
+  
+  .verify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Optional: Set the height of the container to the full viewport height */
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .bt {
+    padding: 10px;
+    cursor: pointer;
+  }
+  

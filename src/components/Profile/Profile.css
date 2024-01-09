@@ -1,0 +1,89 @@
+/* App.css */
+
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+/* Header styling */
+header {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    /* Example of a semi-transparent black background */
+}
+  
+/* Profile component styling */
+.detail {
+    max-width: 80%; /* Set the maximum width to 80% of the viewport width */
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Example of a semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+/* Profile form styling */
+.pro {
+    display: flex;
+    flex-direction: column;
+}
+  
+.pro label {
+    margin: 10px 0;
+}
+  
+.pro input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+}
+  
+/* Button styling */
+.btn {
+    background-color: rgba(51, 51, 51, 0.8); /* Example of a semi-transparent black background */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+/* Expenses form styling */
+.form-input {
+    margin-bottom: 15px;
+}
+  
+.allInput {
+    display: flex;
+    flex-direction: column;
+}
+  
+.allInput div {
+    margin-bottom: 15px;
+}
+
+/* CSVLink styling */
+.CSVLink {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(21, 20, 20, 0.8); /* Example of a semi-transparent dark background */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+  
+/* SingleExpense component styling */
+i {
+    font-style: italic;
+}
+  
+/* SingleExpense buttons styling */
+.btn {
+    margin-left: 5px;
+    cursor: pointer;
+}
