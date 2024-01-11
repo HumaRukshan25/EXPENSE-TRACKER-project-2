@@ -95,7 +95,7 @@ const Profile = () => {
           {profileComplete ? (
             <i style={{ float: "right" }}>
               Your profile is complete!{" "}
-              <Link to="#">Update now if needed</Link>
+              <Link to="#">Update now</Link>
             </i>
           ) : (
             <i style={{ float: "right" }}>

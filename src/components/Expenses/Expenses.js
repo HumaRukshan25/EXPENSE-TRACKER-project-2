@@ -12,6 +12,10 @@ const Expenses = () => {
   const [expenseId, setExpenseId] = useState(null);
   const [csvData, setCsv] = useState("No Data");
   const [category, setCategory] = useState("Food");
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [showActivateButton, setShowActivateButton] = useState(false);
+
+
 
   const [editedAmount, setEditedAmount] = useState(0);
   const [editedDesc, setEditedDesc] = useState("");
@@ -135,6 +139,10 @@ const Expenses = () => {
       }
       return newExpense;
     });
+
+    // Calculate the total amount when expenses change
+    const total = expenses.reduce((acc, expense) => acc + parseFloat(expense.amount), 0);
+    setTotalAmount(total);
   };
 
   const editHandler = (id) => {
@@ -169,6 +177,15 @@ const Expenses = () => {
   useEffect(() => {
     getExpenses();
   }, [getExpenses]);
+  useEffect(() => {
+    // Calculate the total amount when expenses change
+    const total = expenses.reduce((acc, expense) => acc + parseFloat(expense.amount), 0);
+    setTotalAmount(total);
+  
+
+  setShowActivateButton(total >= 1000);
+}, [expenses]);
+
 
   let header = [
     {
@@ -191,25 +208,29 @@ const Expenses = () => {
         <form onSubmit={expenseFormHandler}>
           <div className="allInput">
             <div className="form-input">
-              <h5>Enter Amount</h5>
+              <h5>Amount</h5>
               <input
                 type="number"
                 value={isEdit ? editedAmount : amount}
-                onChange={(e) => (isEdit ? setEditedAmount(e.target.value) : setAmount(e.target.value))}
+                onChange={(e) =>
+                  isEdit ? setEditedAmount(e.target.value) : setAmount(e.target.value)
+                }
               />
             </div>
             <div>
-              <h5>ADD DESCRIPTION</h5>
+              <h5>DESCRIPTION</h5>
               <input
                 type="text"
                 value={isEdit ? editedDesc : desc}
                 placeholder="Enter description"
-                onChange={(e) => (isEdit ? setEditedDesc(e.target.value) : setDesc(e.target.value))}
+                onChange={(e) =>
+                  isEdit ? setEditedDesc(e.target.value) : setDesc(e.target.value)
+                }
                 required
               />
             </div>
             <div>
-              <h5>ADD CATEGORY</h5>
+              <h5>CATEGORY</h5>
               <select
                 className="input"
                 id="category"
@@ -240,6 +261,9 @@ const Expenses = () => {
             deleteHandler={deleteHandler}
           />
         ))}
+        <div>Total Expenses: ${totalAmount.toFixed(2)}</div>
+        {showActivateButton && <button onClick={() => alert("Activate Premium")}>Activate Premium</button>}
+        
         <CSVLink data={csvData} headers={header} filename="expense.csv">
           Download Csv
         </CSVLink>

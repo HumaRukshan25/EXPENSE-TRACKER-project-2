@@ -36,7 +36,7 @@ const Navigation = () => {
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/expense">Add Expense</Link>
+              <Link to="/expense">Expense</Link>
             </li>
           )}
           {isLoggedIn && (

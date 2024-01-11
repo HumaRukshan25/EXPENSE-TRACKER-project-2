@@ -15,7 +15,7 @@ const SingleExpense = (props) => {
         <button onClick={() => deleteHandler(id)} className="btn">
           Delete
         </button>
-        {amount >= 1000 && <button>Activate Premium</button>}
+        
       </li>
     </div>
   );
