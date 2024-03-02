@@ -30,7 +30,7 @@ const Expenses = () => {
 
   const getExpenses = useCallback(() => {
     fetch(
-      `https://expensetracker-5285e-default-rtdb.firebaseio.com//${email}.json`,
+      `https://expensetrackk-default-rtdb.firebaseio.com//${email}.json`,
       {
         method: "GET",
         headers: {
@@ -84,7 +84,7 @@ const Expenses = () => {
 
     if (isEdit) {
       fetch(
-        `https://expensetracker-5285e-default-rtdb.firebaseio.com//${email}/${expenseId}.json`,
+        `https://expensetrackk-default-rtdb.firebaseio.com//${email}/${expenseId}.json`,
         {
           method: "PUT",
           body: JSON.stringify(data),
@@ -107,7 +107,7 @@ const Expenses = () => {
         });
     } else {
       fetch(
-        `https://expensetracker-5285e-default-rtdb.firebaseio.com//${email}.json`,
+        `https://expensetrackk-default-rtdb.firebaseio.com//${email}.json`,
         {
           method: "POST",
           body: JSON.stringify(data),
@@ -157,7 +157,7 @@ const Expenses = () => {
 
   const deleteHandler = (id) => {
     fetch(
-      `https://expensetracker-5285e-default-rtdb.firebaseio.com//${email}/${id}.json`,
+      `https://expensetrackk-default-rtdb.firebaseio.com//${email}/${id}.json`,
       {
         method: "DELETE",
         headers: {
